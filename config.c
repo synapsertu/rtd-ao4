@@ -66,10 +66,10 @@ int readConfig()
 	//********************** DATA POINTS ****************************
 	//***************************************************************
 	
-	dataSource[deviceId].regAddress[1]  =1  ;	dataSource[deviceId].regType[1]	 =1  ;		// Channel 1 Logic Level Reading  
-	dataSource[deviceId].regAddress[2]  =2  ;	dataSource[deviceId].regType[2]	 =1  ;		// Channel 2 Logic Level Reading  
-	dataSource[deviceId].regAddress[3]  =3  ;	dataSource[deviceId].regType[3]	 =1  ;		// Channel 3 Logic Level Reading  
-	dataSource[deviceId].regAddress[4]  =4  ;	dataSource[deviceId].regType[4]	 =1  ;		// Channel 4 Logic Level Reading  
+	dataSource[deviceId].regAddress[1]  =1  ;	dataSource[deviceId].regType[1]	 =1  ;		// Channel 1 
+	dataSource[deviceId].regAddress[2]  =2  ;	dataSource[deviceId].regType[2]	 =1  ;		// Channel 2 
+	dataSource[deviceId].regAddress[3]  =3  ;	dataSource[deviceId].regType[3]	 =1  ;		// Channel 3 
+	dataSource[deviceId].regAddress[4]  =4  ;	dataSource[deviceId].regType[4]	 =1  ;		// Channel 4 
 	
 
 
