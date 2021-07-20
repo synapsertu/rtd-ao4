@@ -2,11 +2,11 @@
 
  Dependancies :
 
-```# apt-get install sqlite3 libsqlite3-dev libmodbus5 libmodbus-dev```
+```# apt-get install libmodbus5 libmodbus-dev```
 
 Compile as below or use 'make all'
 
-```gcc log.c -o log -lsqlite3 -lmodbus```
+```gcc rtu-ao4.c -o rtu-ao4 -lmodbus  ```
 
 ```
 Synapse RTU-AO4 Reader - v1.0
