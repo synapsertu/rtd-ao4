@@ -25,28 +25,28 @@
 void decodeRtuUnits()
 {
 	// Run through each enabled device
-	for(int deviceId=1 ; deviceId<(config.dsTotal+1) ; deviceId++)
-	{	
+	for (int deviceId = 1; deviceId < (config.dsTotal + 1); deviceId++)
+	{
 		// process and module type specific post-modbus read scaling/decoding steps
 		switch (dataSource[deviceId].deviceType)
-		{			
-			default:
-			case RTU_AI8: // [1] -  RTU-AI8
-					// Nothing to do 
-					break;
-			case RTU_DI8: // [2] -  RTU-DI8
-					// Nothing to do 
-					break;
-			case RTU_RTD4: // [3] -  RTU-DI8
-					// Nothing to do 
-					break;		
-			case RTU_DO8:  // [4] -  RTU-DO8
-					// Nothing to do 
-					break;
-			case RTU_AO4:  // [5] -  RTU-AO4
-					// Nothing to do 
-					break;						
-					
-		}	// Switch on device type
-	} // loop on available devices
-} // function
+		{
+		default:
+		case RTU_AI8: // [1] -  RTU-AI8
+			// Nothing to do
+			break;
+		case RTU_DI8: // [2] -  RTU-DI8
+			// Nothing to do
+			break;
+		case RTU_RTD4: // [3] -  RTU-DI8
+			// Nothing to do
+			break;
+		case RTU_DO8: // [4] -  RTU-DO8
+			// Nothing to do
+			break;
+		case RTU_AO4: // [5] -  RTU-AO4
+			// Nothing to do
+			break;
+
+		} 
+	}
+} 

@@ -39,12 +39,12 @@ int readConfig()
    	dataSource[deviceId].deviceType  = RTU_AO4;
 
     // These values will be overwrtten by cmd line options
-	dataSource[deviceId].modbusId    = 1;
-	dataSource[deviceId].baudRate    = 19200;
-	dataSource[deviceId].dataBits    = 8;		
+	dataSource[deviceId].modbusId = 1;
+	dataSource[deviceId].baudRate = 19200;
+	dataSource[deviceId].dataBits = 8;		
+	dataSource[deviceId].stopBit  = 1;
+	dataSource[deviceId].timeout  = 5;	
 	strcpy(dataSource[deviceId].parity,"None");
-	dataSource[deviceId].stopBit     = 1;
-	dataSource[deviceId].timeout     = 5;
 	strcpy(dataSource[deviceId].interface, "/dev/ttyUSB0");
 	
 	
@@ -67,9 +67,9 @@ int readConfig()
 	//***************************************************************
 	
 	dataSource[deviceId].regAddress[1]  =1  ;	dataSource[deviceId].regType[1]	 =1  ;		// Channel 1 
-	dataSource[deviceId].regAddress[2]  =2  ;	dataSource[deviceId].regType[2]	 =1  ;		// Channel 2 
-	dataSource[deviceId].regAddress[3]  =3  ;	dataSource[deviceId].regType[3]	 =1  ;		// Channel 3 
-	dataSource[deviceId].regAddress[4]  =4  ;	dataSource[deviceId].regType[4]	 =1  ;		// Channel 4 
+	dataSource[deviceId].regAddress[2]  =2  ;	dataSource[deviceId].regType[2]	 =1  ;		// Channel 2
+	dataSource[deviceId].regAddress[3]  =3  ;	dataSource[deviceId].regType[3]	 =1  ;		// Channel 3
+	dataSource[deviceId].regAddress[4]  =4  ;	dataSource[deviceId].regType[4]	 =1  ;		// Channel 4
 	
 
 
@@ -81,10 +81,9 @@ void printConfig()
 	int regId;
 	
 	printf("--------- Config Imported ----------\n\n");
-
-	// i = device  n = register
-   for(deviceId=1 ; deviceId<(config.dsTotal+1) ; deviceId++)
-   {	
+	
+    for(deviceId=1 ; deviceId<(config.dsTotal+1) ; deviceId++)
+    {	
 	
 		printf("dataSource [%i] deviceType  = [%i]  \n", deviceId, dataSource[deviceId].deviceType);
 		printf("dataSource [%i] modbusId    = [%i]  \n", deviceId, dataSource[deviceId].modbusId);

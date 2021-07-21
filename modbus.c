@@ -69,7 +69,7 @@ int getModbusValues()
 				   dataSource[deviceId].interface);
 			modbus_close(mb);
 			modbus_free(mb);
-			return -1;
+			exit(1);
 		}
 
 		// Get RTU Specific channel config by making a read from the RTU module ahead of the main request

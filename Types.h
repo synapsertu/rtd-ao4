@@ -44,7 +44,7 @@
 #define MAX_DATASOURCES 20 		        // Devices
 #define MAX_DATAPOINTS  150		        // Max registers per device 
 
-// Not sure why we've left this as a struct, probably historcial, let's convert it back
+// TODO : Not sure why we've left this as a struct, probably historcial, let's convert it back
 typedef struct 
 {
 	int dsTotal; 				// Total number of devices
