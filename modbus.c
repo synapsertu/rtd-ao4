@@ -201,6 +201,7 @@ int getModbusValues()
 				if (rc == -1)
 				{
 					printf("Modbus request Fail : Device Address [%i] Start Address [%i] For [%i] Registers \n", dataSource[deviceId].modbusId, (wStartReg - 1), (requestedRegisters + 1));
+					modbus_flush(mb);
 					modbus_close(mb);
 					modbus_free(mb);
 					exit(1);
