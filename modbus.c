@@ -38,7 +38,7 @@ int getModbusValues()
 	// modbus device handle
 	modbus_t *mb;
 
-	// Defines storage for returned registers from modbus read, *must* equal or exceed maximum number of registers requested, ask me how I know...
+	// Defines storage for returned registers from modbus read, *must* equal or exceed maximum number of registers requested
 	uint16_t mbdata_UI16[30];
 
 	// Run through each device
@@ -62,11 +62,15 @@ int getModbusValues()
 		// Enable/Disable Modbus debug
 		modbus_set_debug(mb, FALSE);
 
+   		// clear the serial port before first use
+		modbus_flush(mb);
+
 		// check we can connect (not sure if this is relevant on serial modbus)
 		if (modbus_connect(mb) == -1)
 		{
 			printf("Connect Failed to Modbus ID [%i] on [%s]\n", dataSource[deviceId].modbusId,
-				   dataSource[deviceId].interface);
+			dataSource[deviceId].interface);
+			modbus_flush(mb);
 			modbus_close(mb);
 			modbus_free(mb);
 			exit(1);
@@ -216,6 +220,7 @@ int getModbusValues()
 		}
 	}
 
+	modbus_flush(mb);
 	modbus_close(mb);
 	modbus_free(mb);
 
